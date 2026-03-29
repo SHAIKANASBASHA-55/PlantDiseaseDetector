@@ -16,11 +16,8 @@ An AI-powered application designed to instantly diagnose **117+ different plant 
 - **🚀 Real-time Diagnosis**: Get instant results for **117+** common plant disease classes.
 - **📸 Multi-Input Support**: Upload existing leaf photos or capture them directly using your device's camera.
 - **🌳 Plantopedia**: A comprehensive encyclopedia of plant diseases with detailed information on symptoms and treatments.
-- **🎨 Premium UI/UX**: A beautiful, responsive interface with:
-  - Dark-green "Nature" aesthetic
-  - Glassmorphic cards and buttons
-  - Smooth micro-animations and transitions
-  - Mobile-friendly responsive design
+- **🎨 Premium UI/UX**: A beautiful, responsive interface with a dark-green "Nature" aesthetic and glassmorphic elements.
+- **🎮 PlantDaddy 3000**: A stunning, interactive 2D garden engine built with high-fidelity procedural rendering and custom material mapping.
 - **⚡ Fast Backend**: Powered by FastAPI for high-performance inference.
 
 ---
@@ -30,9 +27,19 @@ An AI-powered application designed to instantly diagnose **117+ different plant 
 | Layer | Technologies |
 | :--- | :--- |
 | **Frontend** | React, TypeScript, Vite, Vanilla CSS (Custom Design System) |
+| **Engine** | HTML5 Canvas API, Procedural Rendering (PlantDaddy 3000) |
 | **Backend** | FastAPI, Python, Uvicorn |
 | **Machine Learning** | TensorFlow/Keras, MobileNetV2, NumPy, OpenCV |
 | **Data Source** | [PlantVillage Dataset](https://www.kaggle.com/emmareed/plantvillage-dataset) |
+
+---
+
+## 🎮 Interactive Garden: PlantDaddy 3000
+
+The app features an integrated high-fidelity garden simulator located in the **Fun** section.
+- **Infinity Fidelity Engine**: Every plant is procedurally drawn onto an HTML5 Canvas, ensuring unique shapes every time.
+- **Material Mapping**: Uses a premium texture system (Soil, Clay, Velvet, etc.) to skin procedural geometry for a high-end "crafty" look.
+- **Interactions**: Plant seeds, water them in real-time, and harvest points to grow your garden log.
 
 ---
 
@@ -80,10 +87,12 @@ PlantDiseaseDetector/
 │   └── model/               # ML logic and trained scripts
 ├── frontend/
 │   ├── src/
-│   │   ├── pages/           # Home, Scan, Encyclopedia, Results
+│   │   ├── pages/           # React pages (Home, Scan, Encyclopedia)
 │   │   ├── components/      # Reusable UI elements
 │   │   └── App.tsx          # Main routing logic
-│   ├── public/              # Static assets and icons
+│   ├── public/              
+│   │   ├── textures/        # High-fidelity material textures (Soil, Velvet, etc.)
+│   │   └── Funny.html       # Standalone PlantDaddy 3000 Engine
 │   └── vite.config.ts      # Vite configuration
 └── README.md                # Project documentation
 ```
