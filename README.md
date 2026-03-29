@@ -1,44 +1,109 @@
-# Plant Disease Detector
+# 🌿 Plant Disease Detector
 
-An AI-powered application to instantly diagnose 38 plant diseases from uploading or taking photos of plant leaves.
+[![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB?logo=react)](https://reactjs.org/)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/ML-TensorFlow%2FMobileNetV2-FF6F00?logo=tensorflow)](https://www.tensorflow.org/)
 
-## Technologies Used
-- **Frontend**: React + TypeScript + Vite + custom Vanilla CSS (Dark green theme, glassmorphism)
-- **Backend**: FastAPI + Python
-- **ML Model**: MobileNetV2 fine-tuned on PlantVillage dataset
-- **Dataset**: PlantVillage Dataset (38 classes)
+An AI-powered application designed to instantly diagnose **38 different plant diseases** from uploaded photos or real-time camera captures. Built with a stunning, modern dark-mode interface featuring glassmorphism and smooth animations.
 
-## Quick Start Guide
+---
 
-### 1. Backend Server
-Navigate to the `backend/` directory and run the setup script:
+## ✨ Key Features
+
+- **🚀 Real-time Diagnosis**: Get instant results for 38 common plant disease classes.
+- **📸 Multi-Input Support**: Upload existing leaf photos or capture them directly using your device's camera.
+- **🌳 Plantopedia**: A comprehensive encyclopedia of plant diseases with detailed information on symptoms and treatments.
+- **🎨 Premium UI/UX**: A beautiful, responsive interface with:
+  - Dark-green "Nature" aesthetic
+  - Glassmorphic cards and buttons
+  - Smooth micro-animations and transitions
+  - Mobile-friendly responsive design
+- **⚡ Fast Backend**: Powered by FastAPI for high-performance inference.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend** | React, TypeScript, Vite, Vanilla CSS (Custom Design System) |
+| **Backend** | FastAPI, Python, Uvicorn |
+| **Machine Learning** | TensorFlow/Keras, MobileNetV2, NumPy, OpenCV |
+| **Data Source** | [PlantVillage Dataset](https://www.kaggle.com/emmareed/plantvillage-dataset) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Python 3.9+**
+- **Node.js 18+**
+- **Git**
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/SHAIKANASBASHA-55/PlantDiseaseDetector.git
+cd PlantDiseaseDetector
+```
+
+### 2. Backend Setup
 ```bash
 cd backend
-start.bat
+# Run the automated setup script
+./start.bat
 ```
-This script creates a Python virtual environment, installs all requirements, and starts the FastAPI server on port 8000. Keep this terminal open.
+*The script will automatically create a virtual environment, install dependencies from `requirements.txt`, and start the server on `http://localhost:8000`.*
 
-### 2. Frontend Application
-Navigate to the `frontend/` directory, install Node dependencies, and start the development server:
+### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Open your browser to the URL displayed in the terminal (usually `http://localhost:5173`).
+*The app will be available at `http://localhost:5173`.*
 
-### 3. Usage
-- Go to the **Scan** page to test the app.
-- You can upload an image from your computer or use your laptop/mobile web camera to snap a photo of a leaf.
-- Note: If `plant_model.h5` model does not exist, the backend will still run and provide dummy predictions to allow full end-to-end testing of the UI.
-- To train a real model with your local GPUs, place the PlantVillage dataset inside `backend/PlantVillage` and run `python model/train.py`.
+---
 
-## Folder Structure
-- `backend/`
-  - `main.py` - FastAPI entry point serving predictions and data.
-  - `model/predict.py` - ML model loading, preprocessing, inference mapping.
-  - `model/train.py` - Script using Keras ImageDataGenerator and MobileNetV2 base to create the h5 file.
-- `frontend/`
-  - `src/App.tsx` - App routing with React Router.
-  - `src/pages/` - Home, Scan, Result, Encyclopedia pages.
-  - `src/index.css` - Custom design system handling dark/lime colors and glass animations.
+## 📂 Project Structure
+
+```text
+PlantDiseaseDetector/
+├── backend/
+│   ├── main.py              # FastAPI entry point
+│   ├── disease_info.py      # Detailed disease metadata
+│   ├── requirements.txt     # Python dependencies
+│   ├── start.bat            # Automated backend starter
+│   └── model/               # ML logic and trained scripts
+├── frontend/
+│   ├── src/
+│   │   ├── pages/           # Home, Scan, Encyclopedia, Results
+│   │   ├── components/      # Reusable UI elements
+│   │   └── App.tsx          # Main routing logic
+│   ├── public/              # Static assets and icons
+│   └── vite.config.ts      # Vite configuration
+└── README.md                # Project documentation
+```
+
+---
+
+## 📋 Supported Diseases
+The model is trained on 38 classes from the PlantVillage dataset, including:
+- Apple (Scab, Black rot, Rust)
+- Cherry (Powdery mildew)
+- Grape (Black rot, Esca, Leaf blight)
+- Peach (Bacterial spot)
+- Tomato (Early blight, Late blight, Leaf mold, Spider mites, etc.)
+- *And many more...*
+
+---
+
+## 🤝 Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+*Created by [SHAIKANASBASHA](https://github.com/SHAIKANASBASHA-55)*
