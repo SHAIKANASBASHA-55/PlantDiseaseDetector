@@ -6,9 +6,8 @@ backend/env/
 frontend/node_modules/
 frontend/dist/
 
-# Dataset and Models (can be quite large)
+# Dataset-related (large)
 backend/PlantVillage/
-backend/model/
 backend/temp_repo/
 
 # Logs and temp files

@@ -5,6 +5,7 @@ import Scan from './pages/Scan';
 import Result from './pages/Result';
 import Encyclopedia from './pages/Encyclopedia';
 import Plantopedia from './pages/Plantopedia';
+import Funny from './pages/Funny';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/result" element={<Result />} />
                     <Route path="/encyclopedia" element={<Encyclopedia />} />
                     <Route path="/plantopedia" element={<Plantopedia />} />
+                    <Route path="/funny" element={<Funny />} />
                 </Routes>
             </div>
         </Router>

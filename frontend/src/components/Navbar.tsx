@@ -33,6 +33,9 @@ const Navbar: React.FC = () => {
                     <NavLink to="/plantopedia" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
                         Plantopedia
                     </NavLink>
+                    <NavLink to="/funny" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                        Fun
+                    </NavLink>
 
                     <button
                         onClick={() => setIsDark(!isDark)}
