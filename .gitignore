@@ -1,0 +1,29 @@
+# Dependency directories
+node_modules/
+backend/__pycache__/
+backend/.venv/
+backend/env/
+frontend/node_modules/
+frontend/dist/
+
+# Dataset and Models (can be quite large)
+backend/PlantVillage/
+backend/model/
+backend/temp_repo/
+
+# Logs and temp files
+*.log
+error.txt
+frontend/err.txt
+frontend/out.txt
+image_batch_factory.js
+
+# Build and environment files
+.env
+frontend/.env
+backend/.env
+dist/
+
+# OS specific files
+.DS_Store
+Thumbs.db
