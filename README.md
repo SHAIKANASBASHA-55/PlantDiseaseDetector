@@ -5,13 +5,13 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/ML-TensorFlow%2FMobileNetV2-FF6F00?logo=tensorflow)](https://www.tensorflow.org/)
 
-An AI-powered application designed to instantly diagnose **38 different plant diseases** from uploaded photos or real-time camera captures. Built with a stunning, modern dark-mode interface featuring glassmorphism and smooth animations.
+An AI-powered application designed to instantly diagnose **117+ different plant diseases** from uploaded photos or real-time camera captures. Built with a stunning, modern dark-mode interface featuring glassmorphism and smooth animations.
 
 ---
 
 ## ✨ Key Features
 
-- **🚀 Real-time Diagnosis**: Get instant results for 38 common plant disease classes.
+- **🚀 Real-time Diagnosis**: Get instant results for **117+** common plant disease classes.
 - **📸 Multi-Input Support**: Upload existing leaf photos or capture them directly using your device's camera.
 - **🌳 Plantopedia**: A comprehensive encyclopedia of plant diseases with detailed information on symptoms and treatments.
 - **🎨 Premium UI/UX**: A beautiful, responsive interface with:
@@ -89,13 +89,19 @@ PlantDiseaseDetector/
 ---
 
 ## 📋 Supported Diseases
-The model is trained on 38 classes from the PlantVillage dataset, including:
-- Apple (Scab, Black rot, Rust)
-- Cherry (Powdery mildew)
-- Grape (Black rot, Esca, Leaf blight)
-- Peach (Bacterial spot)
-- Tomato (Early blight, Late blight, Leaf mold, Spider mites, etc.)
-- *And many more...*
+The model is trained on **117+ classes** across multiple crops, including:
+- **🍎 Apple/Cherry/Peach**: Scab, Black rot, Rust, Powdery mildew, Bacterial spot
+- **🍅 Tomato/Potato**: Early & Late blight, Leaf mold, Septoria, Target spot, Bacterial spot, Mosaic virus
+- **🌽 Corn**: Gray leaf spot, Common rust, Northern blight
+- **🍇 Grape**: Black rot, Esca (Black Measles), Leaf blight
+- **🍊 Citrus**: Huanglongbing (Citrus greening)
+- **🌶️ Bell Pepper**: Bacterial spot
+- **🍌 Banana**: Sigatoka
+- **🍚 Rice/Wheat**: Brown spot, Leaf rust
+- **☕ Coffee**: Rust
+- **🥭 Mango**: Anthracnose
+- **🧪 Others**: Cassava, Rose, Sugarcane, Cucumber, Watermelon
+- *And many more healthy conditions for each crop.*
 
 ---
 
