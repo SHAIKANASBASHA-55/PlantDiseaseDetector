@@ -67,8 +67,23 @@ const Result: React.FC = () => {
             setInfoLoading(true);
             try {
                 const res = await fetch(`http://localhost:8000/disease-info/${encodeURIComponent(resultData.disease)}`);
-                if (res.ok) setDiseaseInfo(await res.json());
-            } catch (_) {}
+                if (res.ok) {
+                    setDiseaseInfo(await res.json());
+                } else {
+                    throw new Error('Not found');
+                }
+            } catch (_) {
+                console.warn('Using fallback disease info for demo.');
+                // Provide a basic fallback so the UI isn't empty
+                setDiseaseInfo({
+                    overview: `Commonly found in ${resultData.plant} crops, ${resultData.disease} can impact yield quality if not managed. This demo overview provides a glimpse of the detailed analysis available in the full version.`,
+                    causes: ["High humidity levels", "Infected seeds or soil", "Lack of proper ventilation"],
+                    symptoms: ["Discolored spots on leaves", "Wilting of stems", "White or gray fuzzy growth"],
+                    treatment: ["Apply organic fungicides", "Prune infected areas", "Improve air circulation"],
+                    prevention: ["Use disease-resistant varieties", "Rotate crops annually", "Maintain proper spacing"],
+                    impact: ["Reduced photosynthesis", "Premature leaf drop", "Lower fruit/vegetable quality"]
+                });
+            }
             finally { setInfoLoading(false); }
         };
         fetch_();
@@ -112,10 +127,20 @@ const Result: React.FC = () => {
             const data = await res.json();
             setMessages(prev => [...prev, { text: data.reply, isBot: true }]);
         } catch {
-            setMessages(prev => [...prev, { text: "Couldn't reach the server. Is the backend running?", isBot: true }]);
+            // Mock bot response for demo
+            setTimeout(() => {
+                const mockReply = `In this demo mode, I can tell you that ${disease} usually requires careful monitoring of environmental factors. For ${btnLabel.toLowerCase()}, typical advice includes maintaining optimal soil moisture and ensuring clean tools are used. In the full version, I would provide a much more detailed, AI-generated answer based on your specific leaf scan!`;
+                setMessages(prev => [...prev, { text: mockReply, isBot: true }]);
+                setIsAsking(false);
+                setActiveQ(null);
+            }, 800);
+            return;
         } finally {
-            setIsAsking(false);
-            setActiveQ(null);
+            if (!messages.some(m => m.isBot && m.text.includes('demo mode'))) {
+                // Only reset loading if we didn't already trigger the mock timeout above
+                setIsAsking(false);
+                setActiveQ(null);
+            }
         }
     };
 

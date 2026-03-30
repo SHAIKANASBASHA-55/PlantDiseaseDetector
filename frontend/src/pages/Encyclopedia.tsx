@@ -33,7 +33,16 @@ const Encyclopedia: React.FC = () => {
                 const data = await response.json();
                 setDiseases(data.diseases);
             } catch (err) {
-                console.error("Failed to fetch diseases", err);
+                console.warn("Backend unavailable, using fallback encyclopedia data.");
+                // Fallback to static demo data so the encyclopedia isn't empty
+                setDiseases([
+                    { name: 'Apple Scab', plant: 'Apple', severity: 'Moderate', raw_name: 'Apple___Apple_scab' },
+                    { name: 'Tomato Late Blight', plant: 'Tomato', severity: 'High', raw_name: 'Tomato___Late_blight' },
+                    { name: 'Healthy Cherry', plant: 'Cherry', severity: 'None', raw_name: 'Cherry_(including_sour)___healthy' },
+                    { name: 'Grape Black Rot', plant: 'Grape', severity: 'Moderate', raw_name: 'Grape___Black_rot' },
+                    { name: 'Potato Early Blight', plant: 'Potato', severity: 'Low', raw_name: 'Potato___Early_blight' },
+                    { name: 'Healthy Corn', plant: 'Corn', severity: 'None', raw_name: 'Corn_(maize)___healthy' }
+                ]);
             } finally {
                 setLoading(false);
             }
@@ -126,7 +135,9 @@ const Encyclopedia: React.FC = () => {
                                         src={`http://localhost:8000/image/${disease.raw_name}`}
                                         alt={disease.name}
                                         style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 1 }}
-                                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                        onError={(e) => { 
+                                            e.currentTarget.src = `https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=400&h=300&auto=format&fit=crop`; 
+                                        }}
                                     />
                                 </div>
                                 <div className="disease-card-content">
