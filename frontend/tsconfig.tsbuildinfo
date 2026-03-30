@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/navbar.tsx","./src/data/plantopedia_data.ts","./src/pages/encyclopedia.tsx","./src/pages/funny.tsx","./src/pages/home.tsx","./src/pages/plantopedia.tsx","./src/pages/result.tsx","./src/pages/scan.tsx"],"errors":true,"version":"5.9.3"}
